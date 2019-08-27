@@ -14,7 +14,7 @@
  *    Andrew Banks - initial API and implementation and initial documentation
  *******************************************************************************/
 
-
+//RCD
 // Only expose a single object name in the global namespace.
 // Everything must go through this module. Global Paho module
 // only has a single public function, client, which returns
