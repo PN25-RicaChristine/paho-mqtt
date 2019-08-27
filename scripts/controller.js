@@ -1,6 +1,8 @@
 // Create a client instance
 var client;
-client = new Paho.MQTT.Client(location.hostname, Number(location.port), "clientId");
+//client = new Paho.Client(location.hostname, Number(location.port), "clientId");
+//client = new Paho.Client("iot.eclipse.org", 443, "clientId");
+client = new Paho.Client("broker.hivemq.com", 8000, "clientId");
 
 // set callback handlers
 client.onConnectionLost = onConnectionLost;
@@ -15,8 +17,8 @@ function onConnect() {
   // Once a connection has been made, make a subscription and send a message.
   console.log("onConnect");
   client.subscribe("World");
-  message = new Paho.MQTT.Message("Hello");
-  message.destinationName = "World";
+  message = new Paho.Message("Hello PN!");
+  message.destinationName = "World";//topic to subscribe
   client.send(message);
 }
 
